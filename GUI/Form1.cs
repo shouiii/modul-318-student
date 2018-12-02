@@ -46,11 +46,11 @@ namespace GUI
             toStationComboBox.DisplayMember = "name";
         }
 
-        private void findConnectionsButton(object sender, EventArgs e)
-        {
-            Connection railwayConnection = transportApi.GetConnections(fromStationComboBox.)
-            connectionsListBox.DataSource = transportApi.GetConnections(fromStationComboBox.Text, toStationComboBox.Text).ConnectionList;
-            connectionsListBox.DisplayMember = 
-        }
+        //private void findConnectionsButton(object sender, EventArgs e)
+        //{
+        //    Connection railwayConnection = transportApi.GetConnections(fromStationComboBox.)
+        //    connectionsListBox.DataSource = transportApi.GetConnections(fromStationComboBox.Text, toStationComboBox.Text).ConnectionList;
+        //    connectionsListBox.DisplayMember = 
+        //}
     }
 }

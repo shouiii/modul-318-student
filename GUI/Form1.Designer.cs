@@ -119,7 +119,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Verbindungen suchen";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.findConnectionsButton);
+            //this.button1.Click += new System.EventHandler(this.findConnectionsButton);
             // 
             // Form1
             // 
