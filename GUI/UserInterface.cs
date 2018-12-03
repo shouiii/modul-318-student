@@ -11,7 +11,7 @@ using SwissTransport;
 
 namespace GUI
 {
-    public partial class UserInterface : Form
+    public partial class ConnectionProgram : Form
     {
         Transport transportApi = new Transport();
 
@@ -19,7 +19,7 @@ namespace GUI
         /// This method locates a URI to the XAML for the Window/UserControl that is loading, 
         /// and passes it to the System.Windows.Application.LoadComponent() static method. 
         /// </summary>
-        public UserInterface()
+        public ConnectionProgram()
         {
             InitializeComponent();
         }
@@ -30,9 +30,9 @@ namespace GUI
             return station;
         }
 
-        private List<StationBoard> GetStationBoard(string input, string id)
+        private List<StationBoard> GetStationBoard(string input, string id, string time)
         {
-            List<StationBoard> stationBoard = transportApi.GetStationBoard(toStationTextBox.Text, id).Entries;
+            List<StationBoard> stationBoard = transportApi.GetStationBoard(tbToStation.Text, id, time).Entries;
             return stationBoard;
         }
 
@@ -50,51 +50,55 @@ namespace GUI
 
         private void FindConnectionButton(object sender, EventArgs e)
         {
-            
+            string time = dtSetTime.Value.ToString("HH:mm");
 
-            StationBoardView.Visible = false;
+            dgvStationBoard.Visible = false;
 
-            List<Connection> railwayConnection = transportApi.GetConnections(fromStationTextBox.Text, toStationTextBox.Text).ConnectionList;
+            List<Connection> railwayConnection = transportApi.GetConnections(tbFromStation.Text, tbToStation.Text, time).ConnectionList;
             foreach (Connection connection in railwayConnection)
             {
-                connectionView.Rows.Add(Convert.ToDateTime(connection.From.Departure).ToShortTimeString(), connection.From.Station.Name, connection.To.Arrival, connection.To.Station.Name, connection.Duration);
+                dfvConnection.Rows.Add(Convert.ToDateTime(connection.From.Departure).ToShortTimeString(), connection.From.Station.Name, connection.To.Arrival, connection.To.Station.Name, connection.Duration);
             }
         }
 
         private void ShowFromStationBoard(object sender, EventArgs e) // Stationboard for "To ..." station
         {
-            StationBoardView.Rows.Clear();
-            StationBoardView.Refresh();
+            string time = dtSetTime.Value.ToString("HH:mm");
 
-            StationBoardView.Visible = true;
+            dgvStationBoard.Rows.Clear();
+            dgvStationBoard.Refresh();
 
-            string id = GetStationID(fromStationTextBox.Text);
-            List<StationBoard> stationBoard = GetStationBoard(fromStationTextBox.Text, id);
+            dgvStationBoard.Visible = true;
+
+            string id = GetStationID(tbFromStation.Text);
+            List<StationBoard> stationBoard = GetStationBoard(tbFromStation.Text, id, time);
             foreach (StationBoard fromStation in stationBoard)
             {
-                StationBoardView.Rows.Add(Convert.ToDateTime(fromStation.Stop.Departure).ToShortTimeString(), fromStation.Name, fromStation.To);
+                dgvStationBoard.Rows.Add(Convert.ToDateTime(fromStation.Stop.Departure).ToShortTimeString(), fromStation.Number, fromStation.To);
             }
         }
 
         private void ShowToStationBoard(object sender, EventArgs e) // Stationboard for "From ..." station
         {
-            StationBoardView.Rows.Clear();
-            StationBoardView.Refresh();
+            string time = dtSetTime.Value.ToString("HH:mm");
 
-            StationBoardView.Visible = true;
+            dgvStationBoard.Rows.Clear();
+            dgvStationBoard.Refresh();
 
-            string id = GetStationID(toStationTextBox.Text);
-            List<StationBoard> stationBoard = GetStationBoard(toStationTextBox.Text, id);
+            dgvStationBoard.Visible = true;
+
+            string id = GetStationID(tbToStation.Text);
+            List<StationBoard> stationBoard = GetStationBoard(tbToStation.Text, id, time);
             foreach (StationBoard ToStation in stationBoard)
             {
-                StationBoardView.Rows.Add(Convert.ToDateTime(ToStation.Stop.Departure).ToShortTimeString(), ToStation.Name, ToStation.To);
+                dgvStationBoard.Rows.Add(Convert.ToDateTime(ToStation.Stop.Departure).ToShortTimeString(), ToStation.Number, ToStation.To);
             }
         }
 
         private void FromStationTextBox_TextChanged(object sender, EventArgs e) // Autocomplete for "From ..."
         {
             fromAutoInputList.Visible = true;
-            List<Station> stationNames = GetStations(fromStationTextBox.Text).StationList;
+            List<Station> stationNames = GetStations(tbFromStation.Text).StationList;
 
             fromAutoInputList.DataSource = stationNames;
             fromAutoInputList.DisplayMember = "name";
@@ -102,14 +106,14 @@ namespace GUI
 
         private void FromClickAutoInput(object sender, EventArgs e)
         {
-            fromStationTextBox.Text = Convert.ToString(fromAutoInputList.Text);
+            tbFromStation.Text = Convert.ToString(fromAutoInputList.Text);
             fromAutoInputList.Hide();
         }
 
         private void ToStationTextBox_TextChanged(object sender, EventArgs e) // Autocomplete for "To ..."
         {
             toAutoInputList.Visible = true;
-            List<Station> stationNames = GetStations(toStationTextBox.Text).StationList;
+            List<Station> stationNames = GetStations(tbToStation.Text).StationList;
 
             toAutoInputList.DataSource = stationNames;
             toAutoInputList.DisplayMember = "name";
@@ -117,7 +121,7 @@ namespace GUI
 
         private void ToClickAutoInput(object sender, EventArgs e)
         {
-            toStationTextBox.Text = Convert.ToString(toAutoInputList.Text);
+            tbToStation.Text = Convert.ToString(toAutoInputList.Text);
             toAutoInputList.Hide();
         }
 
