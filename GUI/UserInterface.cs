@@ -11,32 +11,47 @@ using SwissTransport;
 
 namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class UserInterface : Form
     {
         Transport transportApi = new Transport();
 
-        public Form1()
+        /// <summary>Initialize 
+        /// This method locates a URI to the XAML for the Window/UserControl that is loading, 
+        /// and passes it to the System.Windows.Application.LoadComponent() static method. 
+        /// </summary>
+        public UserInterface()
         {
             InitializeComponent();
         }
   
-        public Stations Station(string input) // get Station by userInput string
+        private Stations GetStations(string input) // get Station by userInput string
         {
             Stations station = transportApi.GetStations(input);
             return station;
+        }
+        private string GetStationID(string userInput)
+        {
+            string id;
+            List<Station> listOfStations = transportApi.GetStations(userInput).StationList;
+            foreach (Station station in listOfStations)
+            {
+                id = station.Id;
+                return id;
+            }
+            return null;
         }
 
         private void showFromStationsButton(object sender, EventArgs e)
         {
             fromStationComboBox.DroppedDown = true;
-            fromStationComboBox.DataSource = Station(fromStationComboBox.Text).StationList;
+            fromStationComboBox.DataSource = GetStations(fromStationComboBox.Text).StationList;
             fromStationComboBox.DisplayMember = "name";
         }
 
         private void showToStationsButton(object sender, EventArgs e)
         {
             toStationComboBox.DroppedDown = true;
-            toStationComboBox.DataSource = Station(toStationComboBox.Text).StationList;
+            toStationComboBox.DataSource = GetStations(toStationComboBox.Text).StationList;
             toStationComboBox.DisplayMember = "name";
         }
 
@@ -51,18 +66,6 @@ namespace GUI
             }
         }
 
-        public string GetStationID(string userInput)
-        {
-            string id;
-            List<Station> listOfStations = transportApi.GetStations(userInput).StationList;
-            foreach (Station station in listOfStations)
-            {
-                id = station.Id;
-                return id;
-            }
-            return null;
-        }
-
         private void showFromStationBoard(object sender, EventArgs e)
         {
             stationBoardView.Visible = true;
@@ -75,43 +78,19 @@ namespace GUI
             }
         }
 
+        private void fromStationTextBox_TextChanged(object sender, EventArgs e)
+        {
+            fromAutoInputList.Visible = true;
+            List<Station> toStation = GetStations(fromStationTextBox.Text).StationList;
 
+            fromAutoInputList.DataSource = toStation;
+            fromAutoInputList.DisplayMember = "name";
+        }
 
-        //private void fromStationTextBox_TextChanged(object sender, EventArgs e)
-        //{
-
-        //    this.fromStationTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    this.fromStationTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-        //    TextBox t = sender as TextBox;
-
-        //    if (t != null)
-        //    {
-        //        if (t.Text.Length > 0)
-        //        {
-        //            List<Station> stations = Station(t.Text).StationList;
-
-        //            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-        //            collection.AddRange((stations.ToArray()).ToString);
-        //        }
-        //    }
-        //}
-
-        //private List<Station> SuggestStrings(string text)
-        //{
-        //    List<Station> stations = Station(text).StationList;
-
-        //    return stations;
-        //}
-
-        //private void fromStationTextBox_TextChanged(object sender, EventArgs e)
-        //{
-        //    fromAutoInputList.Visible = true;
-
-        //    fromAutoInputList.DataSource = Station(fromStationTextBox.Text).StationList;
-        //    fromAutoInputList.DisplayMember = "name";
-
-
-        //}
+        private void doubleClickAutoInput(object sender, EventArgs e)
+        {
+            fromStationTextBox.Text = Convert.ToString(fromAutoInputList.Text);
+            fromAutoInputList.Hide();
+        }
     }
 }

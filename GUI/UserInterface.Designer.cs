@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Form1
+    partial class UserInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -46,10 +46,10 @@
             this.fromStationTextBox = new System.Windows.Forms.TextBox();
             this.fromAutoInputList = new System.Windows.Forms.ListBox();
             this.stationBoardView = new System.Windows.Forms.DataGridView();
-            this.fromStationBoard = new System.Windows.Forms.Button();
-            this.toStationBoard = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromStationBoard = new System.Windows.Forms.Button();
+            this.toStationBoard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.connectionView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBoardView)).BeginInit();
             this.SuspendLayout();
@@ -57,52 +57,52 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 36);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(42, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(62, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "From ...";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(440, 36);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(660, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "To ...";
             // 
             // fromStationComboBox
             // 
             this.fromStationComboBox.FormattingEnabled = true;
-            this.fromStationComboBox.Location = new System.Drawing.Point(31, 52);
+            this.fromStationComboBox.Location = new System.Drawing.Point(46, 80);
+            this.fromStationComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fromStationComboBox.Name = "fromStationComboBox";
-            this.fromStationComboBox.Size = new System.Drawing.Size(303, 21);
+            this.fromStationComboBox.Size = new System.Drawing.Size(452, 28);
             this.fromStationComboBox.TabIndex = 4;
             // 
             // toStationComboBox
             // 
             this.toStationComboBox.FormattingEnabled = true;
-            this.toStationComboBox.Location = new System.Drawing.Point(443, 52);
+            this.toStationComboBox.Location = new System.Drawing.Point(664, 80);
+            this.toStationComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.toStationComboBox.Name = "toStationComboBox";
-            this.toStationComboBox.Size = new System.Drawing.Size(303, 21);
+            this.toStationComboBox.Size = new System.Drawing.Size(452, 28);
             this.toStationComboBox.TabIndex = 5;
             // 
             // findStartStation
             // 
-            this.findStartStation.Location = new System.Drawing.Point(370, 51);
+            this.findStartStation.Location = new System.Drawing.Point(555, 78);
+            this.findStartStation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.findStartStation.Name = "findStartStation";
-            this.findStartStation.Size = new System.Drawing.Size(42, 23);
+            this.findStartStation.Size = new System.Drawing.Size(63, 35);
             this.findStartStation.TabIndex = 6;
             this.findStartStation.Text = "FIND";
             this.findStartStation.UseVisualStyleBackColor = true;
@@ -110,9 +110,10 @@
             // 
             // findEndStation
             // 
-            this.findEndStation.Location = new System.Drawing.Point(781, 51);
+            this.findEndStation.Location = new System.Drawing.Point(1172, 78);
+            this.findEndStation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.findEndStation.Name = "findEndStation";
-            this.findEndStation.Size = new System.Drawing.Size(42, 23);
+            this.findEndStation.Size = new System.Drawing.Size(63, 35);
             this.findEndStation.TabIndex = 7;
             this.findEndStation.Text = "FIND";
             this.findEndStation.UseVisualStyleBackColor = true;
@@ -120,9 +121,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 90);
+            this.button1.Location = new System.Drawing.Point(46, 138);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(792, 41);
+            this.button1.Size = new System.Drawing.Size(1188, 63);
             this.button1.TabIndex = 9;
             this.button1.Text = "Find connections";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,12 +144,13 @@
             this.Arrival,
             this.To,
             this.Duration});
-            this.connectionView.Location = new System.Drawing.Point(31, 197);
+            this.connectionView.Location = new System.Drawing.Point(46, 303);
+            this.connectionView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.connectionView.Name = "connectionView";
             this.connectionView.ReadOnly = true;
             this.connectionView.RowHeadersVisible = false;
             this.connectionView.RowHeadersWidth = 80;
-            this.connectionView.Size = new System.Drawing.Size(792, 283);
+            this.connectionView.Size = new System.Drawing.Size(1188, 435);
             this.connectionView.TabIndex = 10;
             // 
             // Departure
@@ -183,27 +186,33 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 181);
+            this.label4.Location = new System.Drawing.Point(48, 278);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(98, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Connections";
             // 
             // fromStationTextBox
             // 
-            this.fromStationTextBox.Location = new System.Drawing.Point(31, 137);
+            this.fromStationTextBox.Location = new System.Drawing.Point(46, 211);
+            this.fromStationTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fromStationTextBox.Name = "fromStationTextBox";
-            this.fromStationTextBox.Size = new System.Drawing.Size(303, 20);
+            this.fromStationTextBox.Size = new System.Drawing.Size(452, 26);
             this.fromStationTextBox.TabIndex = 12;
+            this.fromStationTextBox.TextChanged += new System.EventHandler(this.fromStationTextBox_TextChanged);
             // 
             // fromAutoInputList
             // 
             this.fromAutoInputList.FormattingEnabled = true;
-            this.fromAutoInputList.Location = new System.Drawing.Point(31, 156);
+            this.fromAutoInputList.ItemHeight = 20;
+            this.fromAutoInputList.Location = new System.Drawing.Point(46, 237);
+            this.fromAutoInputList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fromAutoInputList.Name = "fromAutoInputList";
-            this.fromAutoInputList.Size = new System.Drawing.Size(303, 95);
+            this.fromAutoInputList.Size = new System.Drawing.Size(452, 144);
             this.fromAutoInputList.TabIndex = 13;
             this.fromAutoInputList.Visible = false;
+            this.fromAutoInputList.DoubleClick += new System.EventHandler(this.doubleClickAutoInput);
             // 
             // stationBoardView
             // 
@@ -216,32 +225,14 @@
             this.stationBoardView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Name});
-            this.stationBoardView.Location = new System.Drawing.Point(31, 197);
+            this.stationBoardView.Location = new System.Drawing.Point(46, 303);
+            this.stationBoardView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.stationBoardView.Name = "stationBoardView";
             this.stationBoardView.ReadOnly = true;
             this.stationBoardView.RowHeadersVisible = false;
             this.stationBoardView.RowHeadersWidth = 80;
-            this.stationBoardView.Size = new System.Drawing.Size(792, 283);
+            this.stationBoardView.Size = new System.Drawing.Size(1188, 435);
             this.stationBoardView.TabIndex = 14;
-            // 
-            // fromStationBoard
-            // 
-            this.fromStationBoard.Location = new System.Drawing.Point(338, 51);
-            this.fromStationBoard.Name = "fromStationBoard";
-            this.fromStationBoard.Size = new System.Drawing.Size(29, 23);
-            this.fromStationBoard.TabIndex = 15;
-            this.fromStationBoard.Text = "B";
-            this.fromStationBoard.UseVisualStyleBackColor = true;
-            this.fromStationBoard.Click += new System.EventHandler(this.showFromStationBoard);
-            // 
-            // toStationBoard
-            // 
-            this.toStationBoard.Location = new System.Drawing.Point(749, 51);
-            this.toStationBoard.Name = "toStationBoard";
-            this.toStationBoard.Size = new System.Drawing.Size(29, 23);
-            this.toStationBoard.TabIndex = 16;
-            this.toStationBoard.Text = "B";
-            this.toStationBoard.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -255,15 +246,36 @@
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
             // 
+            // fromStationBoard
+            // 
+            this.fromStationBoard.Location = new System.Drawing.Point(507, 78);
+            this.fromStationBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fromStationBoard.Name = "fromStationBoard";
+            this.fromStationBoard.Size = new System.Drawing.Size(44, 35);
+            this.fromStationBoard.TabIndex = 15;
+            this.fromStationBoard.Text = "B";
+            this.fromStationBoard.UseVisualStyleBackColor = true;
+            this.fromStationBoard.Click += new System.EventHandler(this.showFromStationBoard);
+            // 
+            // toStationBoard
+            // 
+            this.toStationBoard.Location = new System.Drawing.Point(1124, 78);
+            this.toStationBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.toStationBoard.Name = "toStationBoard";
+            this.toStationBoard.Size = new System.Drawing.Size(44, 35);
+            this.toStationBoard.TabIndex = 16;
+            this.toStationBoard.Text = "B";
+            this.toStationBoard.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 523);
+            this.ClientSize = new System.Drawing.Size(1290, 805);
+            this.Controls.Add(this.fromAutoInputList);
             this.Controls.Add(this.toStationBoard);
             this.Controls.Add(this.fromStationBoard);
             this.Controls.Add(this.stationBoardView);
-            this.Controls.Add(this.fromAutoInputList);
             this.Controls.Add(this.fromStationTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.connectionView);
@@ -275,7 +287,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             ((System.ComponentModel.ISupportInitialize)(this.connectionView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBoardView)).EndInit();
             this.ResumeLayout(false);
