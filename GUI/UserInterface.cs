@@ -120,5 +120,10 @@ namespace GUI
             toStationTextBox.Text = Convert.ToString(toAutoInputList.Text);
             toAutoInputList.Hide();
         }
+
+        private void UserInterface_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
