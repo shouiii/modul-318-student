@@ -29,6 +29,13 @@ namespace GUI
             Stations station = transportApi.GetStations(input);
             return station;
         }
+
+        private List<StationBoard> GetStationBoard(string input, string id)
+        {
+            List<StationBoard> stationBoard = transportApi.GetStationBoard(toStationTextBox.Text, id).Entries;
+            return stationBoard;
+        }
+
         private string GetStationID(string userInput)
         {
             string id;
@@ -41,56 +48,77 @@ namespace GUI
             return null;
         }
 
-        private void showFromStationsButton(object sender, EventArgs e)
+        private void FindConnectionButton(object sender, EventArgs e)
         {
-            fromStationComboBox.DroppedDown = true;
-            fromStationComboBox.DataSource = GetStations(fromStationComboBox.Text).StationList;
-            fromStationComboBox.DisplayMember = "name";
-        }
+            
 
-        private void showToStationsButton(object sender, EventArgs e)
-        {
-            toStationComboBox.DroppedDown = true;
-            toStationComboBox.DataSource = GetStations(toStationComboBox.Text).StationList;
-            toStationComboBox.DisplayMember = "name";
-        }
+            StationBoardView.Visible = false;
 
-        private void findConnectionButton(object sender, EventArgs e)
-        {
-            stationBoardView.Visible = false;
-
-            List<Connection> railwayConnection = transportApi.GetConnections(fromStationComboBox.Text, toStationComboBox.Text).ConnectionList;
+            List<Connection> railwayConnection = transportApi.GetConnections(fromStationTextBox.Text, toStationTextBox.Text).ConnectionList;
             foreach (Connection connection in railwayConnection)
             {
-                connectionView.Rows.Add(connection.From.Departure, connection.From.Station.Name, connection.To.Arrival, connection.To.Station.Name, connection.Duration);
+                connectionView.Rows.Add(Convert.ToDateTime(connection.From.Departure).ToShortTimeString(), connection.From.Station.Name, connection.To.Arrival, connection.To.Station.Name, connection.Duration);
             }
         }
 
-        private void showFromStationBoard(object sender, EventArgs e)
+        private void ShowFromStationBoard(object sender, EventArgs e) // Stationboard for "To ..." station
         {
-            stationBoardView.Visible = true;
+            StationBoardView.Rows.Clear();
+            StationBoardView.Refresh();
 
-            string id = GetStationID(fromStationComboBox.Text);
-            List<StationBoard> stationBoard = transportApi.GetStationBoard(fromStationComboBox.Text, id).Entries;
+            StationBoardView.Visible = true;
+
+            string id = GetStationID(fromStationTextBox.Text);
+            List<StationBoard> stationBoard = GetStationBoard(fromStationTextBox.Text, id);
             foreach (StationBoard fromStation in stationBoard)
             {
-                stationBoardView.Rows.Add(fromStation.Stop.Departure, fromStation.Name);
+                StationBoardView.Rows.Add(Convert.ToDateTime(fromStation.Stop.Departure).ToShortTimeString(), fromStation.Name, fromStation.To);
             }
         }
 
-        private void fromStationTextBox_TextChanged(object sender, EventArgs e)
+        private void ShowToStationBoard(object sender, EventArgs e) // Stationboard for "From ..." station
+        {
+            StationBoardView.Rows.Clear();
+            StationBoardView.Refresh();
+
+            StationBoardView.Visible = true;
+
+            string id = GetStationID(toStationTextBox.Text);
+            List<StationBoard> stationBoard = GetStationBoard(toStationTextBox.Text, id);
+            foreach (StationBoard ToStation in stationBoard)
+            {
+                StationBoardView.Rows.Add(Convert.ToDateTime(ToStation.Stop.Departure).ToShortTimeString(), ToStation.Name, ToStation.To);
+            }
+        }
+
+        private void FromStationTextBox_TextChanged(object sender, EventArgs e) // Autocomplete for "From ..."
         {
             fromAutoInputList.Visible = true;
-            List<Station> toStation = GetStations(fromStationTextBox.Text).StationList;
+            List<Station> stationNames = GetStations(fromStationTextBox.Text).StationList;
 
-            fromAutoInputList.DataSource = toStation;
+            fromAutoInputList.DataSource = stationNames;
             fromAutoInputList.DisplayMember = "name";
         }
 
-        private void doubleClickAutoInput(object sender, EventArgs e)
+        private void FromClickAutoInput(object sender, EventArgs e)
         {
             fromStationTextBox.Text = Convert.ToString(fromAutoInputList.Text);
             fromAutoInputList.Hide();
+        }
+
+        private void ToStationTextBox_TextChanged(object sender, EventArgs e) // Autocomplete for "To ..."
+        {
+            toAutoInputList.Visible = true;
+            List<Station> stationNames = GetStations(toStationTextBox.Text).StationList;
+
+            toAutoInputList.DataSource = stationNames;
+            toAutoInputList.DisplayMember = "name";
+        }
+
+        private void ToClickAutoInput(object sender, EventArgs e)
+        {
+            toStationTextBox.Text = Convert.ToString(toAutoInputList.Text);
+            toAutoInputList.Hide();
         }
     }
 }
