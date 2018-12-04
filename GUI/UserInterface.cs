@@ -23,7 +23,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-  
+
         private Stations GetStations(string input) // get Station by userInput string
         {
             Stations station = transportApi.GetStations(input);
