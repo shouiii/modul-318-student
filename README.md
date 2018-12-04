@@ -24,6 +24,10 @@ wie z.B. Funktionen des Programms, Use Cases, Testfälle, Installationsanleitung 
 5.  A005: Als ÖV-User möchte ich nicht nur aktuelle Verbindungen suchen können, 
     sondern auch solche zu einem beliebigen anderen Zeitpunkt, damit ich zukünftige Reisen planen kann.
 
+**Eigene Funktionen**
+
+1.  Swap-Stations: Als ÖV-User möchte ich Start- mit der Enstation wechseln.
+
 # Mockup
 
 Einfaches Mockup für die Applikation:
@@ -148,6 +152,16 @@ User möchte Anhand vom Ort alle verfügbaren Stationen finden.
 |   Schirtt	|   Aktivität	|   Erwartetes Resultat	|
 |---	|---	|---	|
 |   1	|  Ortsnamen (Emmenbrücke) eingeben	|  Es werden alle Bahnhöfe in der nähe von Emmenrbücke angezeigt.	|
+
+**Test 05 - Swap Stations**
+
+User möchte Anhand von einem Klick die Startstation und Endstation miteinander tauschen.
+
+|   Schirtt	|   Aktivität	|   Erwartetes Resultat	|
+|---	|---	|---	|
+|   1	|   Abfahrtsort Emmenbrücke Bahnhof in Textfeld eingeben	|   Emmenbrücke Bahnhof wird mittels Autocomplete erkannt und eingegeben.	|
+|   2	|   Enstation Luzern Bahnhof in Textfeld eingeben	|   Luzern Bahnhof wird mittel Autocomplete erkannt und eingegeben.	|
+|	3	|	Doppelpfeil Button klicken	|	Startstation wurde mit der Endstation getauscht	|
 
 # Installationsanleitung
 
