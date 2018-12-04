@@ -32,8 +32,13 @@ namespace GUI
 
         private List<StationBoard> GetStationBoard(string input, string id, string time)
         {
-            List<StationBoard> stationBoard = transportApi.GetStationBoard(txtToStation.Text, id, time).Entries;
-            return stationBoard;
+            StationBoardRoot root = transportApi.GetStationBoard(txtToStation.Text, id, time);
+
+            if (root != null)
+            {
+                return root.Entries;
+            }
+            return null;
         }
 
         private string GetStationID(string userInput)
@@ -46,6 +51,18 @@ namespace GUI
                 return id;
             }
             return null;
+        }
+
+        private void CheckConnectionButton() // Enables or disable Connection Button depending on the state of the textfield
+        {
+            if(txtFromStation.Text != String.Empty && txtToStation.Text != String.Empty)
+            {
+                btnConnection.Visible = true;
+            }
+            else
+            {
+                btnConnection.Visible = false;
+            }
         }
 
         private void FindConnectionButton(object sender, EventArgs e)
@@ -62,7 +79,7 @@ namespace GUI
             {
                 string duration = connection.Duration.Substring(6, 2);
 
-                dgvConnection.Rows.Add(Convert.ToDateTime(connection.From.Departure).ToShortTimeString(),connection.From.Platform, connection.From.Station.Name, connection.To.Arrival, connection.To.Station.Name, duration + " Min");
+                dgvConnection.Rows.Add(Convert.ToDateTime(connection.From.Departure).ToShortTimeString(), connection.From.Platform, connection.From.Station.Name, connection.To.Arrival, connection.To.Station.Name, duration + " Min");
             }
         }
 
@@ -102,32 +119,38 @@ namespace GUI
 
         private void FromStationTextBox_TextChanged(object sender, EventArgs e) // Autocomplete for "From ..."
         {
-            fromAutoInputList.Visible  = true;
+            lbFromAutoInputList.Visible  = true;
             List<Station> stationNames = GetStations(txtFromStation.Text).StationList;
 
-            fromAutoInputList.DataSource    = stationNames;
-            fromAutoInputList.DisplayMember = "name";
+            lbFromAutoInputList.DataSource    = stationNames;
+            lbFromAutoInputList.DisplayMember = "name";
+
+            btnFromStationBoard.Visible = true;
+            CheckConnectionButton();
         }
 
         private void FromClickAutoInput(object sender, EventArgs e)
         {
-            txtFromStation.Text = Convert.ToString(fromAutoInputList.Text);
-            fromAutoInputList.Hide();
+            txtFromStation.Text = Convert.ToString(lbFromAutoInputList.Text);
+            lbFromAutoInputList.Hide();
         }
 
         private void ToStationTextBox_TextChanged(object sender, EventArgs e) // Autocomplete for "To ..."
         {
-            toAutoInputList.Visible    = true;
+            lbToAutoInputList.Visible    = true;
             List<Station> stationNames = GetStations(txtToStation.Text).StationList;
 
-            toAutoInputList.DataSource    = stationNames;
-            toAutoInputList.DisplayMember = "name";
+            lbToAutoInputList.DataSource    = stationNames;
+            lbToAutoInputList.DisplayMember = "name";
+
+            btnToStationBoard.Visible = true;
+            CheckConnectionButton();
         }
 
         private void ToClickAutoInput(object sender, EventArgs e)
         {
-            txtToStation.Text = Convert.ToString(toAutoInputList.Text);
-            toAutoInputList.Hide();
+            txtToStation.Text = Convert.ToString(lbToAutoInputList.Text);
+            lbToAutoInputList.Hide();
         }
 
         private void ClickStartToEnd(object sender, EventArgs e) // Swap startstation to endstation and backwards
@@ -136,6 +159,14 @@ namespace GUI
             string to   = txtToStation.Text;
             txtFromStation.Text = to;
             txtToStation.Text   = from;
+        }
+
+        private void btnResetTextBox(object sender, EventArgs e)
+        {
+            txtFromStation.Text = null;
+            txtToStation.Text = null;
+            lbFromAutoInputList.Hide();
+            lbToAutoInputList.Hide();
         }
     }
 }

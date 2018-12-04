@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionProgram));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFromStation = new System.Windows.Forms.TextBox();
-            this.fromAutoInputList = new System.Windows.Forms.ListBox();
+            this.lbFromAutoInputList = new System.Windows.Forms.ListBox();
             this.dgvStationBoard = new System.Windows.Forms.DataGridView();
             this.DepartureStationBoard = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameStationBoard = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,13 +52,17 @@
             this.btnFromStationBoard = new System.Windows.Forms.Button();
             this.btnToStationBoard = new System.Windows.Forms.Button();
             this.txtToStation = new System.Windows.Forms.TextBox();
-            this.toAutoInputList = new System.Windows.Forms.ListBox();
+            this.lbToAutoInputList = new System.Windows.Forms.ListBox();
             this.dtSetTime = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.slogan = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.companyName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConnection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationBoard)).BeginInit();
             this.panel1.SuspendLayout();
@@ -70,6 +74,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Corbel", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label2.Location = new System.Drawing.Point(32, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 35);
@@ -80,6 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Corbel", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label3.Location = new System.Drawing.Point(726, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 35);
@@ -93,13 +99,14 @@
             this.btnConnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnection.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnection.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConnection.Location = new System.Drawing.Point(38, 278);
+            this.btnConnection.Location = new System.Drawing.Point(41, 278);
             this.btnConnection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConnection.Name = "btnConnection";
             this.btnConnection.Size = new System.Drawing.Size(1300, 63);
             this.btnConnection.TabIndex = 5;
             this.btnConnection.Text = "FIND CONNECTIONS";
             this.btnConnection.UseVisualStyleBackColor = false;
+            this.btnConnection.Visible = false;
             this.btnConnection.Click += new System.EventHandler(this.FindConnectionButton);
             // 
             // dgvConnection
@@ -111,14 +118,14 @@
             this.dgvConnection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConnection.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvConnection.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConnection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConnection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvConnection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConnection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DepartureConnections,
@@ -177,6 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Corbel", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label4.Location = new System.Drawing.Point(32, 356);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -195,19 +203,19 @@
             this.txtFromStation.TabIndex = 1;
             this.txtFromStation.TextChanged += new System.EventHandler(this.FromStationTextBox_TextChanged);
             // 
-            // fromAutoInputList
+            // lbFromAutoInputList
             // 
-            this.fromAutoInputList.BackColor = System.Drawing.Color.Gainsboro;
-            this.fromAutoInputList.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromAutoInputList.FormattingEnabled = true;
-            this.fromAutoInputList.ItemHeight = 24;
-            this.fromAutoInputList.Location = new System.Drawing.Point(38, 217);
-            this.fromAutoInputList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.fromAutoInputList.Name = "fromAutoInputList";
-            this.fromAutoInputList.Size = new System.Drawing.Size(452, 124);
-            this.fromAutoInputList.TabIndex = 13;
-            this.fromAutoInputList.Visible = false;
-            this.fromAutoInputList.Click += new System.EventHandler(this.FromClickAutoInput);
+            this.lbFromAutoInputList.BackColor = System.Drawing.Color.Gainsboro;
+            this.lbFromAutoInputList.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFromAutoInputList.FormattingEnabled = true;
+            this.lbFromAutoInputList.ItemHeight = 24;
+            this.lbFromAutoInputList.Location = new System.Drawing.Point(38, 217);
+            this.lbFromAutoInputList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbFromAutoInputList.Name = "lbFromAutoInputList";
+            this.lbFromAutoInputList.Size = new System.Drawing.Size(452, 124);
+            this.lbFromAutoInputList.TabIndex = 13;
+            this.lbFromAutoInputList.Visible = false;
+            this.lbFromAutoInputList.Click += new System.EventHandler(this.FromClickAutoInput);
             // 
             // dgvStationBoard
             // 
@@ -218,27 +226,27 @@
             this.dgvStationBoard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStationBoard.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvStationBoard.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStationBoard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStationBoard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStationBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStationBoard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DepartureStationBoard,
             this.NameStationBoard,
             this.Destination});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStationBoard.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStationBoard.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStationBoard.GridColor = System.Drawing.SystemColors.Control;
             this.dgvStationBoard.Location = new System.Drawing.Point(38, 396);
             this.dgvStationBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -270,25 +278,28 @@
             // 
             // btnFromStationBoard
             // 
-            this.btnFromStationBoard.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnFromStationBoard.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFromStationBoard.FlatAppearance.BorderSize = 0;
             this.btnFromStationBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFromStationBoard.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFromStationBoard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFromStationBoard.Location = new System.Drawing.Point(498, 174);
+            this.btnFromStationBoard.ForeColor = System.Drawing.Color.White;
+            this.btnFromStationBoard.Location = new System.Drawing.Point(498, 175);
             this.btnFromStationBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFromStationBoard.Name = "btnFromStationBoard";
             this.btnFromStationBoard.Size = new System.Drawing.Size(150, 43);
             this.btnFromStationBoard.TabIndex = 2;
             this.btnFromStationBoard.Text = "STATIONBOARD";
             this.btnFromStationBoard.UseVisualStyleBackColor = false;
+            this.btnFromStationBoard.Visible = false;
             this.btnFromStationBoard.Click += new System.EventHandler(this.ShowFromStationBoard);
             // 
             // btnToStationBoard
             // 
-            this.btnToStationBoard.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnToStationBoard.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnToStationBoard.FlatAppearance.BorderSize = 0;
             this.btnToStationBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToStationBoard.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToStationBoard.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnToStationBoard.ForeColor = System.Drawing.Color.White;
             this.btnToStationBoard.Location = new System.Drawing.Point(1192, 174);
             this.btnToStationBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnToStationBoard.Name = "btnToStationBoard";
@@ -296,6 +307,7 @@
             this.btnToStationBoard.TabIndex = 4;
             this.btnToStationBoard.Text = "STATIONBOARD";
             this.btnToStationBoard.UseVisualStyleBackColor = false;
+            this.btnToStationBoard.Visible = false;
             this.btnToStationBoard.Click += new System.EventHandler(this.ShowToStationBoard);
             // 
             // txtToStation
@@ -309,19 +321,19 @@
             this.txtToStation.TabIndex = 3;
             this.txtToStation.TextChanged += new System.EventHandler(this.ToStationTextBox_TextChanged);
             // 
-            // toAutoInputList
+            // lbToAutoInputList
             // 
-            this.toAutoInputList.BackColor = System.Drawing.Color.Gainsboro;
-            this.toAutoInputList.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toAutoInputList.FormattingEnabled = true;
-            this.toAutoInputList.ItemHeight = 24;
-            this.toAutoInputList.Location = new System.Drawing.Point(732, 217);
-            this.toAutoInputList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.toAutoInputList.Name = "toAutoInputList";
-            this.toAutoInputList.Size = new System.Drawing.Size(452, 124);
-            this.toAutoInputList.TabIndex = 18;
-            this.toAutoInputList.Visible = false;
-            this.toAutoInputList.Click += new System.EventHandler(this.ToClickAutoInput);
+            this.lbToAutoInputList.BackColor = System.Drawing.Color.Gainsboro;
+            this.lbToAutoInputList.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbToAutoInputList.FormattingEnabled = true;
+            this.lbToAutoInputList.ItemHeight = 24;
+            this.lbToAutoInputList.Location = new System.Drawing.Point(732, 217);
+            this.lbToAutoInputList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbToAutoInputList.Name = "lbToAutoInputList";
+            this.lbToAutoInputList.Size = new System.Drawing.Size(452, 124);
+            this.lbToAutoInputList.TabIndex = 18;
+            this.lbToAutoInputList.Visible = false;
+            this.lbToAutoInputList.Click += new System.EventHandler(this.ToClickAutoInput);
             // 
             // dtSetTime
             // 
@@ -391,6 +403,69 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ClickStartToEnd);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.Enabled = false;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button2.Location = new System.Drawing.Point(38, 278);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(1300, 63);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "FIND CONNECTIONS";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Gainsboro;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button3.Location = new System.Drawing.Point(1192, 227);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(146, 43);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "RESET";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnResetTextBox);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button4.Location = new System.Drawing.Point(498, 174);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 43);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "STATIONBOARD";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Gainsboro;
+            this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button5.Location = new System.Drawing.Point(1192, 174);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(146, 43);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "STATIONBOARD";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // ConnectionProgram
             // 
             this.AcceptButton = this.btnConnection;
@@ -398,11 +473,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1380, 840);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.fromAutoInputList);
+            this.Controls.Add(this.lbFromAutoInputList);
             this.Controls.Add(this.dtSetTime);
-            this.Controls.Add(this.toAutoInputList);
+            this.Controls.Add(this.lbToAutoInputList);
             this.Controls.Add(this.txtToStation);
             this.Controls.Add(this.btnToStationBoard);
             this.Controls.Add(this.btnFromStationBoard);
@@ -413,6 +489,9 @@
             this.Controls.Add(this.btnConnection);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ConnectionProgram";
@@ -433,12 +512,12 @@
         private System.Windows.Forms.DataGridView dgvConnection;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFromStation;
-        private System.Windows.Forms.ListBox fromAutoInputList;
+        private System.Windows.Forms.ListBox lbFromAutoInputList;
         private System.Windows.Forms.DataGridView dgvStationBoard;
         private System.Windows.Forms.Button btnFromStationBoard;
         private System.Windows.Forms.Button btnToStationBoard;
         private System.Windows.Forms.TextBox txtToStation;
-        private System.Windows.Forms.ListBox toAutoInputList;
+        private System.Windows.Forms.ListBox lbToAutoInputList;
         private System.Windows.Forms.DateTimePicker dtSetTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureStationBoard;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameStationBoard;
@@ -454,6 +533,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label companyName;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
