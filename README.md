@@ -32,11 +32,11 @@ Einfaches Mockup für die Applikation:
 
 # Use Cases / AKtivitätsdiagramm
 
-Die Usecases für mein Programm:
+**Die Usecases für mein Programm:**
 
 ![Use Cases](Images/UseCase.jpg)
 
-Das Aktivitätsdiagramm:
+**Das Aktivitätsdiagramm:**
 
 ![Aktivitaetsdiagramm](Images/Aktivitaetsdiagramm.jpg)
 
