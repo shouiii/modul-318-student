@@ -36,6 +36,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnConnection = new System.Windows.Forms.Button();
             this.dgvConnection = new System.Windows.Forms.DataGridView();
+            this.DepartureConnections = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFromStation = new System.Windows.Forms.TextBox();
             this.fromAutoInputList = new System.Windows.Forms.ListBox();
@@ -48,16 +54,10 @@
             this.txtToStation = new System.Windows.Forms.TextBox();
             this.toAutoInputList = new System.Windows.Forms.ListBox();
             this.dtSetTime = new System.Windows.Forms.DateTimePicker();
-            this.DepartureConnections = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.companyName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.slogan = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.companyName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConnection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationBoard)).BeginInit();
@@ -82,9 +82,9 @@
             this.label3.Font = new System.Drawing.Font("Corbel", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(726, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 35);
+            this.label3.Size = new System.Drawing.Size(50, 35);
             this.label3.TabIndex = 3;
-            this.label3.Text = "TO...";
+            this.label3.Text = "TO";
             // 
             // btnConnection
             // 
@@ -136,6 +136,42 @@
             this.dgvConnection.RowHeadersWidth = 80;
             this.dgvConnection.Size = new System.Drawing.Size(1300, 400);
             this.dgvConnection.TabIndex = 10;
+            // 
+            // DepartureConnections
+            // 
+            this.DepartureConnections.HeaderText = "Departure";
+            this.DepartureConnections.Name = "DepartureConnections";
+            this.DepartureConnections.ReadOnly = true;
+            // 
+            // Platform
+            // 
+            this.Platform.HeaderText = "Platform";
+            this.Platform.Name = "Platform";
+            this.Platform.ReadOnly = true;
+            // 
+            // From
+            // 
+            this.From.HeaderText = "From";
+            this.From.Name = "From";
+            this.From.ReadOnly = true;
+            // 
+            // Arrival
+            // 
+            this.Arrival.HeaderText = "Arrival";
+            this.Arrival.Name = "Arrival";
+            this.Arrival.ReadOnly = true;
+            // 
+            // To
+            // 
+            this.To.HeaderText = "To";
+            this.To.Name = "To";
+            this.To.ReadOnly = true;
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            this.Duration.ReadOnly = true;
             // 
             // label4
             // 
@@ -297,42 +333,6 @@
             this.dtSetTime.Size = new System.Drawing.Size(452, 26);
             this.dtSetTime.TabIndex = 19;
             // 
-            // DepartureConnections
-            // 
-            this.DepartureConnections.HeaderText = "Departure";
-            this.DepartureConnections.Name = "DepartureConnections";
-            this.DepartureConnections.ReadOnly = true;
-            // 
-            // Platform
-            // 
-            this.Platform.HeaderText = "Platform";
-            this.Platform.Name = "Platform";
-            this.Platform.ReadOnly = true;
-            // 
-            // From
-            // 
-            this.From.HeaderText = "From";
-            this.From.Name = "From";
-            this.From.ReadOnly = true;
-            // 
-            // Arrival
-            // 
-            this.Arrival.HeaderText = "Arrival";
-            this.Arrival.Name = "Arrival";
-            this.Arrival.ReadOnly = true;
-            // 
-            // To
-            // 
-            this.To.HeaderText = "To";
-            this.To.Name = "To";
-            this.To.ReadOnly = true;
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            this.Duration.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
@@ -344,16 +344,16 @@
             this.panel1.Size = new System.Drawing.Size(1384, 110);
             this.panel1.TabIndex = 20;
             // 
-            // companyName
+            // slogan
             // 
-            this.companyName.AutoSize = true;
-            this.companyName.Font = new System.Drawing.Font("Corbel", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companyName.ForeColor = System.Drawing.SystemColors.Control;
-            this.companyName.Location = new System.Drawing.Point(130, 33);
-            this.companyName.Name = "companyName";
-            this.companyName.Size = new System.Drawing.Size(261, 49);
-            this.companyName.TabIndex = 21;
-            this.companyName.Text = "NMB ALS SBB";
+            this.slogan.AutoSize = true;
+            this.slogan.Font = new System.Drawing.Font("Corbel", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.slogan.ForeColor = System.Drawing.SystemColors.Control;
+            this.slogan.Location = new System.Drawing.Point(1040, 48);
+            this.slogan.Name = "slogan";
+            this.slogan.Size = new System.Drawing.Size(300, 29);
+            this.slogan.TabIndex = 22;
+            this.slogan.Text = "YOUR  WAY  IS  OUR  TRAIN!";
             // 
             // pictureBox1
             // 
@@ -366,16 +366,16 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // slogan
+            // companyName
             // 
-            this.slogan.AutoSize = true;
-            this.slogan.Font = new System.Drawing.Font("Corbel", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slogan.ForeColor = System.Drawing.SystemColors.Control;
-            this.slogan.Location = new System.Drawing.Point(1040, 48);
-            this.slogan.Name = "slogan";
-            this.slogan.Size = new System.Drawing.Size(300, 29);
-            this.slogan.TabIndex = 22;
-            this.slogan.Text = "YOUR  WAY  IS  OUR  TRAIN!";
+            this.companyName.AutoSize = true;
+            this.companyName.Font = new System.Drawing.Font("Corbel", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyName.ForeColor = System.Drawing.SystemColors.Control;
+            this.companyName.Location = new System.Drawing.Point(130, 33);
+            this.companyName.Name = "companyName";
+            this.companyName.Size = new System.Drawing.Size(261, 49);
+            this.companyName.TabIndex = 21;
+            this.companyName.Text = "NMB ALS SBB";
             // 
             // button1
             // 
@@ -416,7 +416,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ConnectionProgram";
-            this.Load += new System.EventHandler(this.UserInterface_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConnection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationBoard)).EndInit();
             this.panel1.ResumeLayout(false);

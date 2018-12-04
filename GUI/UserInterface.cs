@@ -130,12 +130,7 @@ namespace GUI
             toAutoInputList.Hide();
         }
 
-        private void UserInterface_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClickStartToEnd(object sender, EventArgs e)
+        private void ClickStartToEnd(object sender, EventArgs e) // Swap startstation to endstation and backwards
         {
             string from = txtFromStation.Text;
             string to   = txtToStation.Text;
