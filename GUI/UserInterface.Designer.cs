@@ -99,7 +99,7 @@
             this.btnConnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnection.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnection.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConnection.Location = new System.Drawing.Point(41, 278);
+            this.btnConnection.Location = new System.Drawing.Point(38, 278);
             this.btnConnection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConnection.Name = "btnConnection";
             this.btnConnection.Size = new System.Drawing.Size(1300, 63);
@@ -283,7 +283,7 @@
             this.btnFromStationBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFromStationBoard.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFromStationBoard.ForeColor = System.Drawing.Color.White;
-            this.btnFromStationBoard.Location = new System.Drawing.Point(498, 175);
+            this.btnFromStationBoard.Location = new System.Drawing.Point(498, 174);
             this.btnFromStationBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFromStationBoard.Name = "btnFromStationBoard";
             this.btnFromStationBoard.Size = new System.Drawing.Size(150, 43);
@@ -438,6 +438,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.Enabled = false;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

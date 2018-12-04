@@ -165,3 +165,11 @@ User möchte Anhand von einem Klick die Startstation und Endstation miteinander t
 
 # Installationsanleitung
 
+1.  Öffne diesen Link --> [NO MOL BESSER ALS SBB DOWNLOAD](https://github.com/shouiii/modul-318-student/releases/download/v1.0/NMB-ALS-SBB.msi)
+2.  Download die .msi Datei
+3.  Doppelklick auf NMB-ALS-SBB.msi
+4.  Klick **Next**
+5.  Wähle **Just me** aus und klicke auf **Next**
+6.  Klicke **Next**
+7.  Öffne den Installationspfad und klicke auf die .exe Datei
+8.  Enjoy!
